@@ -9,7 +9,7 @@ dotenv.config();
 
 //Connect to DB
 mongoose.connect(
-    process.env.DB_CONNECT,
+    process.env.MONGODB_URI ,
     {useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("Database -Benchmark Connected")
 })
