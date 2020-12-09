@@ -44,6 +44,7 @@ export default class FileUpload extends Component {
             <div>
                 <Button onClick={this.handleOpen.bind(this)}>
                     Upload File
+
                 </Button>
                 <DropzoneDialog
                     open={this.state.open}
