@@ -1,11 +1,6 @@
-import React, { Component } from "react";
-import NavBarHome from "./NavBar/NavBarHome";
-import FileUpload from "./FileUpload"
+import React, { Component } from 'react';
+import NavBarHome from './NavBar/NavBarHome';
 class HomePage extends Component {
-  //   handle_logout = () => {
-  //     logout();
-  //     this.props.history.push("/login");
-  //   };
   render() {
     return (
       <div>
@@ -13,9 +8,7 @@ class HomePage extends Component {
           <NavBarHome />
         </div>
         <h2>Hello this our HomePage</h2>
-        <div>
-        <FileUpload />
-        </div>
+        <div></div>
       </div>
     );
   }
