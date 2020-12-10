@@ -138,10 +138,13 @@ export default function Evaluation() {
     console.log('render');
     async function fetchData() {
       try {
-        axios.get('http://localhost:8000/api/evaluation/').then((response) => {
-          // setRows(response.data);
-          setRows(response.data.evaluationData);
+        let res = await fetch('http://localhost:8000/api/evaluation/', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
         });
+        setRows(res.data.evaluationData);
       } catch (e) {
         console.log(e);
       }
