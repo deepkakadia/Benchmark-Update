@@ -1,22 +1,16 @@
-import React, { Component } from "react";
-import { loremIpsum } from "react-lorem-ipsum";
+import React from 'react';
+import NavBarHome from './NavBar/NavBarHome';
 
-class About extends Component {
-  //   handle_logout = () => {
-  //     logout();
-  //     this.props.history.push("/login");
-  //   };
-  render() {
-    return (
-      <div className="text-wrapper">
-        {loremIpsum({ p: 3 }).map((text) => (
-          <div className="text" key={text}>
-            {text}
-          </div>
-        ))}
+export default function About() {
+  return (
+    <div>
+      <NavBarHome />
+      <div style={{ textAlign: 'center', marginTop: '50px' }}>
+        <p>Prof. Philippos Mordohai</p>
+        <p>Assistants: </p>
+        <p>Deep Kakadia</p>
+        <p>Parth Parab</p>
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-export default About;

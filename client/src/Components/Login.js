@@ -1,7 +1,6 @@
-import React from "react";
-import { login } from "../utils/index";
-import NavBarLogin from "./NavBar/NavBarLogin";
-import Dashboard from "./Dashboard"
+import React from 'react';
+import { login } from '../utils/index';
+import NavBarLogin from './NavBar/NavBarLogin';
 import {
   Button,
   TextField,
@@ -9,12 +8,12 @@ import {
   Paper,
   Typography,
   Link,
-} from "@material-ui/core";
+} from '@material-ui/core';
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: "", password: "", authflag: 1 };
+    this.state = { username: '', password: '', authflag: 1 };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -33,13 +32,13 @@ class LoginForm extends React.Component {
     if (check) {
       const { history } = this.props;
       history.push({
-        pathname:"/Dashboard",
-        state:{
-            name: this.state.username
-         }
-       });
+        pathname: '/Dashboard',
+        state: {
+          name: this.state.username,
+        },
+      });
     } else {
-      alert("Incorrect Credentials!");
+      alert('Incorrect Credentials!');
     }
   }
 
@@ -47,38 +46,38 @@ class LoginForm extends React.Component {
     return (
       <div>
         <div>
-          <NavBarLogin btnName="Signup" btnLink="/signup" />
+          <NavBarLogin btnName='Signup' btnLink='/signup' />
         </div>
-        <Grid container spacing={0} justify="center" direction="row">
+        <Grid container spacing={0} justify='center' direction='row'>
           <Grid item>
             <Grid
               container
-              direction="column"
-              justify="center"
+              direction='column'
+              justify='center'
               spacing={2}
-              className="login-form"
+              className='login-form'
             >
               <Paper
-                variant="elevation"
+                variant='elevation'
                 elevation={2}
-                className="login-background"
+                className='login-background'
               >
-                <Grid item style={{ paddingBottom: "15px" }}>
-                  <Typography component="h1" variant="h5">
+                <Grid item style={{ paddingBottom: '15px' }}>
+                  <Typography component='h1' variant='h5'>
                     Sign in to your account
                   </Typography>
                 </Grid>
                 <Grid item>
                   <form onSubmit={this.handleSubmit}>
-                    <Grid container direction="column" spacing={2}>
+                    <Grid container direction='column' spacing={2}>
                       <Grid item>
                         <TextField
-                          type="email"
-                          label="Email"
+                          type='email'
+                          label='Email'
                           fullWidth
-                          name="username"
-                          variant="outlined"
-                          color="primary"
+                          name='username'
+                          variant='outlined'
+                          color='primary'
                           value={this.state.username}
                           onChange={this.handleChange}
                           required
@@ -87,11 +86,11 @@ class LoginForm extends React.Component {
                       </Grid>
                       <Grid item>
                         <TextField
-                          type="password"
-                          label="Password"
+                          type='password'
+                          label='Password'
                           fullWidth
-                          name="password"
-                          variant="outlined"
+                          name='password'
+                          variant='outlined'
                           value={this.state.password}
                           onChange={this.handleChange}
                           required
@@ -99,13 +98,13 @@ class LoginForm extends React.Component {
                       </Grid>
                       <Grid item>
                         <Button
-                          variant="contained"
+                          variant='contained'
                           style={{
-                            backgroundColor: "#1b998b",
-                            color: "#ffffff",
+                            backgroundColor: '#1b998b',
+                            color: '#ffffff',
                           }}
-                          type="submit"
-                          className="button-block"
+                          type='submit'
+                          className='button-block'
                         >
                           Submit
                         </Button>
@@ -113,8 +112,8 @@ class LoginForm extends React.Component {
                     </Grid>
                   </form>
                 </Grid>
-                <Grid item style={{ marginTop: "10px" }}>
-                  <Link href="/signup" variant="body2">
+                <Grid item style={{ marginTop: '10px' }}>
+                  <Link href='/signup' variant='body2'>
                     New User? Create Account
                   </Link>
                 </Grid>
