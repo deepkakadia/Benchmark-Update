@@ -4,10 +4,10 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { registerValidation, loginValidation } = require('../routes/validation');
-
-// router.use(function(req, res) {
-// 	res.sendFile(path.join(__dirname, '../client/build/index.html'));
-// });
+const path = require('path')
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 //User Register Route
 router.post('/register', async (req, res) => {
   //Validating data from user
@@ -43,6 +43,7 @@ router.post('/login', async (req, res) => {
   //Validating user Data
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
+  console.log("hello");
   //Checking if email exists i database
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
