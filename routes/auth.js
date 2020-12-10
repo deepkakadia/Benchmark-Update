@@ -5,9 +5,9 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { registerValidation, loginValidation } = require('../routes/validation');
 const path = require('path')
-router.use(function(req, res) {
-	res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
+// router.use(function(req, res) {
+// 	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+// });
 //User Register Route
 router.post('/register', async (req, res) => {
   //Validating data from user
