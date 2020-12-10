@@ -13,7 +13,7 @@ router.post('/register', async (req, res) => {
   //Validating data from user
   const { error } = registerValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
+  console.log("hello");
   //Checking if the user is already in database
   const emailExist = await User.findOne({ email: req.body.email });
   if (emailExist) {
@@ -43,7 +43,6 @@ router.post('/login', async (req, res) => {
   //Validating user Data
   const { error } = loginValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
-
   //Checking if email exists i database
   const user = await User.findOne({ email: req.body.email });
   if (!user) {

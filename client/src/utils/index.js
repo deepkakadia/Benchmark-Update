@@ -7,6 +7,7 @@ export const login = async (username, password) => {
     },
     body: JSON.stringify({ email: username, password: password }),
   });
+  console.log(res)
   let response = await res.json();
   if (response.token) {
     localStorage.setItem('token', response.token);
